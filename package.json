@@ -1,0 +1,17 @@
+{
+  "name": "nseventparser",
+  "version": "1.0.0",
+  "description": "Event Parsing of NightScout Events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "engines": {
+   "node": "8.11.4" 
+  }
+}
