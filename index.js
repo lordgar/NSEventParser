@@ -9,8 +9,8 @@ app.get('/', (req,res) =>{
 })
 
 app.post('/event/:eid', (req, res) => {
-    console.log(`NS Event: ${req.params.eid}`)
-    console.log(`body: ${req.body}`)
-    res.status(200).send(`${req.params.eid} : ${req.body}`)
+    console.log(`NS Event: ${req.params.eid}`);
+    console.log("body: " + req.body);
+    res.status(200).send(req.body);
 })
 .listen(PORT, () => console.log(`Listening on ${ PORT }`))
