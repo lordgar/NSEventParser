@@ -10,8 +10,7 @@ app.get('/', (req,res) =>{
 
 app.post('/event/:eid', (req, res) => {
     console.log(`NS Event: ${req.params.eid}`);
-    const bodyObj = JSON.parse(req.body)
-    console.log(bodyObj);
+    console.log(req.params);
     res.status(200).send('NSEventParser');
 })
 .listen(PORT, () => console.log(`Listening on ${ PORT }`))
