@@ -35,7 +35,7 @@ function parseForPushover(inParams, inQuery) {
       var msg = {
         // These values correspond to the parameters detailed on https://pushover.net/api
         // 'message' is required. All other values are optional.
-        message: inQuery,	// required
+        message: 'put message data here',	// required
         title: inParams.eid,
         sound: 'magic',
         priority: 1
