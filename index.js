@@ -22,6 +22,7 @@ app.post('/event/:eid', (req, res) => {
 .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 function parseForPushover(inParams, inQuery) {
+    var eventTitle = inQuery.Value1.trim()
     var p = new Push( {
         user: USER,
         token: TOKEN,
@@ -36,7 +37,7 @@ function parseForPushover(inParams, inQuery) {
         // These values correspond to the parameters detailed on https://pushover.net/api
         // 'message' is required. All other values are optional.
         message: 'put message data here',	// required
-        title: inParams.eid,
+        title: eventTitle,
         sound: 'magic',
         priority: 1
       }
