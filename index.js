@@ -39,8 +39,10 @@ function parseForPushover(inParams, inQuery) {
             sendMessage = false;
             break;
         case 'ns-info':
+            console.log(v1);
             if(v1 === 'CGM Error Code')
             {
+                console.log("matched CGM Error Code");
                 eventPriority = 0;
                 eventSound = 'alien'; 
             }
