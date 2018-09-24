@@ -44,20 +44,20 @@ function parseForPushover(inParams, inQuery) {
                 case 'Profile Switch':
                 {
                     console.log("matched Profile Switch");
-                    eventPriority = 0;
+                    eventPriority = 1;
                     eventSound = 'alien';
                 }
                 break;
                 case 'CGM Error Code':
                 {
                     console.log("matched CGM Error Code");
-                    eventPriority = 0;
+                    eventPriority = 1;
                     eventSound = 'alien';
                 }
                 break;
                 default:
                     eventSound = 'pushover';
-                    eventPriority = -2;
+                    eventPriority = -1;
                     break;
             }
             sendMessage = true;
@@ -69,7 +69,7 @@ function parseForPushover(inParams, inQuery) {
             break;
         case 'ns-urgent':
             eventSound = 'gamelan';
-            eventPriority = -1;
+            eventPriority = 0;
             sendMessage = true;
             break;    
         default:
