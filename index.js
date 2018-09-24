@@ -25,10 +25,10 @@ function parseForPushover(inParams, inQuery) {
     var v1 = inQuery.Value1.trim();
     var v2 = inQuery.Value2.trim();
     var eventTitle = v1 + ' (' + inParams.eid + ')';
-    var eventSound = 'pushover';
+    var eventSound;
     var eventMessage = v2;
-    var eventPriority = -2;
-    var sendMessage = true;
+    var eventPriority;
+    var sendMessage;
     var p = new Push( {
         user: USER,
         token: TOKEN,
@@ -59,6 +59,9 @@ function parseForPushover(inParams, inQuery) {
             sendMessage = true;
             break;    
         default:
+            eventSound = 'pushover';
+            eventPriority = -2;
+            sendMessage = true;
             break;
     }
       
@@ -69,7 +72,7 @@ function parseForPushover(inParams, inQuery) {
             sound: eventSound,
             priority: eventPriority
           }
-           
+          console.log("Sending notification with priority = " + msg.priority); 
           p.send( msg, function( err, result ) {
             if ( err ) {
               throw err
