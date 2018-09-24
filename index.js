@@ -40,11 +40,25 @@ function parseForPushover(inParams, inQuery) {
             break;
         case 'ns-info':
             console.log(v1);
-            if(v1 === 'CGM Error Code')
-            {
-                console.log("matched CGM Error Code");
-                eventPriority = 0;
-                eventSound = 'alien'; 
+            switch(v1){
+                case 'Profile Switch':
+                {
+                    console.log("matched Profile Switch");
+                    eventPriority = 0;
+                    eventSound = 'alien';
+                }
+                break;
+                case 'CGM Error Code':
+                {
+                    console.log("matched CGM Error Code");
+                    eventPriority = 0;
+                    eventSound = 'alien';
+                }
+                break;
+                default:
+                    eventSound = 'pushover';
+                    eventPriority = -2;
+                    break;
             }
             sendMessage = true;
             break;
