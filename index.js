@@ -94,7 +94,8 @@ function parseForPushover(inParams, inQuery) {
            
             console.log( result )
           })    
-    } else {
+    } 
+    else {
         console.log('message not sent')
     }
 
